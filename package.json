@@ -1,0 +1,20 @@
+{
+  "name": "reqarr",
+  "version": "1.0.0",
+  "description": "Media requests to sonarr and radarr",
+  "main": "reqarr.js",
+  "scripts": {
+    "build-ui": "npm run --prefix ./ui build",
+    "serve-ui": "npm run --prefix ./ui serve",
+    "start": "node ./reqarr.js"
+  },
+  "author": "Kyle Rump",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0",
+    "sqlstring": "^2.3.2"
+  }
+}
