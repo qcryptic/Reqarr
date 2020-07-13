@@ -25,7 +25,7 @@ const reqarr = express();
     reqarr.use(bodyParser.json());
     reqarr.use(bodyParser.urlencoded({ extended: true }));
 
-    // Serve static frontend files
+    // Serve static frontend vue files
     reqarr.use(config.contextPath, express.static(path.join(__dirname, 'public')));
 
     // Add routes
