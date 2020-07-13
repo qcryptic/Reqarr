@@ -1,3 +1,4 @@
 build-release.sh
 .vscode/
 node_modules/
+public/
