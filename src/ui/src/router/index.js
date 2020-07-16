@@ -28,7 +28,12 @@ Vue.use(VueRouter)
   {
     path: '/register',
     name: 'Register',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
+    component: () => import(/* webpackChunkName: "register" */ '../views/Login.vue')
+  },
+  {
+    path: '*',
+    name: '404',
+    component: () => import(/* webpackChunkName: "pagenotfound" */ '../views/PageNotFound.vue')
   }
 ]
 

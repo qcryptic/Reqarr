@@ -1,16 +1,15 @@
 <template>
   <div id="app">
     <md-toolbar id="toolbar" md-elevation="1">
-      <div id="logo" @click="$router.push('/')">
-        <img id="logoPic" src="./assets/logo.png">
-        <h3 id="logoName" class="md-title">Reqarr</h3>
+      <div id="toolbar-logo" @click="$router.push('/')">
+        <img id="logo-pic" src="./assets/logo.png">
+        <h3 id="logo-name" class="md-title">Reqarr</h3>
       </div>
-      <div id="space"></div>
-      <!--<md-button to="/" v-if="!isLogin">SEARCH</md-button>-->
+      <div id="toolbar-search">
+          <input id="search-bar" type="text" placeholder="Search..." v-if="!isPhone && !isLogin">
+      </div>
       <md-button to="/activity" v-if="!isLogin && !isPhone">ACTIVITY</md-button>
-      <md-button to="/settings" class="md-icon-button" v-if="!isLogin">
-        <md-icon>settings</md-icon>
-      </md-button>
+      <md-button to="/settings" class="md-icon-button" v-if="!isLogin"><md-icon>settings</md-icon></md-button>
     </md-toolbar>
     <router-view/>
     <div class="phone-viewport" v-if="isPhone && !isLogin">
@@ -25,6 +24,9 @@
 <script>
 
 export default {
+  data: () => ({
+    userinfo: ''
+  }),
   computed: {
     isLogin() {
       return this.$route.path === '/login' || this.$route.path === '/register'; 
@@ -43,24 +45,28 @@ export default {
   color: white;
 }
 
-#space {
+#toolbar-search {
   flex: 1 1 0%;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+  padding-left: 20px;
 }
 
 #toolbar {
   text-align: left;
 }
 
-#logo {
+#toolbar-logo {
   cursor: pointer;
   display: inline-flex;
 }
 
-#logoName {
+#logo-name {
   line-height: 2.34em;
 }
 
-#logoPic {
+#logo-pic {
   padding: 5px;
   max-width: 45px;
   height: auto;
@@ -76,5 +82,32 @@ export default {
   width: 100%;
   left: 0;
   bottom: 0;
+}
+
+#search-bar {
+  min-height: 40px;
+  height: 40px;
+  width: 100%;
+  background-color: #303030;
+  border-radius: 5px;
+  border: none; 
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+#search-bar:focus {
+  outline: none;
+}
+#search-bar::placeholder { 
+  color: #b3b3b3;
+  opacity: 1;
+}
+#search-bar:-ms-input-placeholder { 
+  color: #b3b3b3;
+}
+#search-bar::-ms-input-placeholder { 
+  color: #b3b3b3;
 }
 </style>
