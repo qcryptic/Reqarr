@@ -7,9 +7,8 @@ Application is built on Node.js with a Vue.js frontend.
 
 ## Installation and Startup
 
-1. Reqarr requires nodejs. Get node at their [website](https://nodejs.org/en/download/) or install it using your package manager.
-    * Recommended to install NPM, which includes nodejs with it
-2. Download the latest release of reqarr and extract it.
+1. Reqarr requires nodejs. Get node at their [website](https://nodejs.org/en/download/) or install it using your package manager
+2. Download the latest release of reqarr and extract it
 3. From the extracted directory, start the application by using the command `node reqarr`
 4. Reqarr should now be running at http://localhost:8787 
 

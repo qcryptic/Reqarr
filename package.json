@@ -4,16 +4,21 @@
   "description": "Media requests to sonarr and radarr",
   "main": "reqarr.js",
   "scripts": {
-    "build-ui": "npm run --prefix ./ui build",
-    "serve-ui": "npm run --prefix ./ui serve",
+    "install-ui": "npm --prefix ./src/ui install",
+    "build-ui": "npm run --prefix ./src/ui build",
+    "serve-ui": "npm run --prefix ./src/ui serve",
     "start": "node ./reqarr.js"
   },
   "author": "Kyle Rump",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "connect-sqlite3": "^0.9.11",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "sqlite3": "^5.0.0",
     "sqlstring": "^2.3.2"
   }

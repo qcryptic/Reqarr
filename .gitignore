@@ -2,3 +2,4 @@ build-release.sh
 .vscode/
 node_modules/
 public/
+!src/ui/public
